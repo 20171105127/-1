@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var temp = 0
+    var q = 0
     @IBOutlet weak var caculaterDisplay: UITextField!
     
     @IBAction func botton1(_ sender: Any) {
@@ -70,14 +71,50 @@ class ViewController: UIViewController {
     @IBAction func jia(_ sender: Any) {
         temp = Int(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
+        q = 1
     }
     
+    @IBAction func jian(_ sender: Any) {
+        temp = Int(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        q = 2
+    }
     
+    @IBAction func cheng(_ sender: Any) {
+        temp = Int(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        q = 3
+    }
+    @IBAction func chu(_ sender: Any) {
+        temp = Int(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        q = 4
+    }
     
     @IBAction func dengyu(_ sender: Any) {
-        var sum = 0
-        sum = temp + Int(caculaterDisplay.text!)!
-        caculaterDisplay.text = "\(sum)"
+        if (q == 1) {
+            var sum = 0
+            sum = temp + Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(sum)"
+        }
+        if(q == 2)
+        {
+            var sum1 = 0
+            sum1 = temp - Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(sum1)"
+        }
+        if(q == 3)
+        {
+            var sum2 = 0
+            sum2 = temp * Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(sum2)"
+        }
+        if(q == 4)
+        {
+            var sum3 = 0
+            sum3 = temp / Int(caculaterDisplay.text!)!
+            caculaterDisplay.text = "\(sum3)"
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
