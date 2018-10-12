@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var temp: Double = 0
     var q = 0
+    var w = 0
     @IBOutlet weak var caculaterDisplay: UITextField!
     
     @IBAction func botton1(_ sender: Any) {
@@ -71,6 +72,19 @@ class ViewController: UIViewController {
         caculaterDisplay.text = ""
     }
     
+    @IBAction func shanchu(_ sender: Any) {
+        caculaterDisplay.text?.removeLast()
+    }
+    @IBAction func zhengfu(_ sender: Any) {
+        if (w==0) {
+            caculaterDisplay.text = "-"
+            w = 1
+        }
+        if (w==1) {
+            caculaterDisplay.text = "+"
+            w = 0
+        }
+    }
     
     @IBAction func jia(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
