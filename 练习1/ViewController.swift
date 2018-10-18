@@ -76,14 +76,9 @@ class ViewController: UIViewController {
         caculaterDisplay.text?.removeLast()
     }
     @IBAction func zhengfu(_ sender: Any) {
-        if (w==0) {
-            caculaterDisplay.text = "-"
-            w = 1
-        }
-        if (w==1) {
-            caculaterDisplay.text = "+"
-            w = 0
-        }
+        let count = Double(caculaterDisplay.text!)!
+        let count2 = -count
+        caculaterDisplay.text = String(count2)
     }
     
     @IBAction func jia(_ sender: Any) {
