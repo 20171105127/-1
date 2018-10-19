@@ -12,7 +12,10 @@ class ViewController: UIViewController {
     var temp: Double = 0
     var q = 0
     var w = 0
+    var judge = 0
+    
     @IBOutlet weak var caculaterDisplay: UITextField!
+
     
     @IBAction func botton1(_ sender: Any) {
         caculaterDisplay.text = caculaterDisplay.text!+"1"
@@ -66,6 +69,7 @@ class ViewController: UIViewController {
     @IBAction func xiaoshudian(_ sender: Any) {
         caculaterDisplay.text =
         caculaterDisplay.text!+"."
+        judge = 1
     }
     
     @IBAction func clear(_ sender: Any) {
@@ -109,25 +113,46 @@ class ViewController: UIViewController {
             var sum :Double = 0
             sum = temp + Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum)"
+            if judge == 1{
+                caculaterDisplay.text =  String(format: "%f", sum)
+            }else{
+                caculaterDisplay.text = String(format: "%.0f", sum)
+            }
         }
         if(q == 2)
         {
             var sum1 :Double = 0
             sum1 = temp - Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum1)"
+            if judge == 1{
+                caculaterDisplay.text =  String(format: "%f", sum1)
+            }else{
+                caculaterDisplay.text = String(format: "%.0f", sum1)
+            }
         }
         if(q == 3)
         {
             var sum2 :Double = 0
             sum2 = temp * Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum2)"
+            if judge == 1{
+                caculaterDisplay.text =  String(format: "%f", sum2)
+            }else{
+                caculaterDisplay.text = String(format: "%.0f", sum2)
+            }
         }
         if(q == 4)
         {
             var sum3 :Double = 0
             sum3 = temp / Double(caculaterDisplay.text!)!
             caculaterDisplay.text = "\(sum3)"
+            if judge == 1{
+                caculaterDisplay.text =  String(format: "%f", sum3)
+            }else{
+                caculaterDisplay.text = String(format: "%.0f", sum3)
+            }
         }
+        judge = 0
     }
     override func viewDidLoad() {
         super.viewDidLoad()
