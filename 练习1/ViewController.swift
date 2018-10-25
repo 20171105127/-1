@@ -108,6 +108,23 @@ class ViewController: UIViewController {
         q = 4
     }
     
+    @IBAction func sinn(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        q = 5
+    }
+    
+    @IBAction func cosn(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        q = 6
+    }
+    
+    @IBAction func tann(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        caculaterDisplay.text = ""
+        q = 7
+    }
     @IBAction func dengyu(_ sender: Any) {
         if (q == 1) {
             var sum :Double = 0
@@ -153,6 +170,24 @@ class ViewController: UIViewController {
             }
         }
         judge = 0
+        if(q == 5)
+        {
+            var sum6 :Double = 0
+            sum6 = sin(temp)
+            caculaterDisplay.text = "\(sum6)"
+        }
+        if(q == 6)
+        {
+            var sum7 :Double = 0
+            sum7 = cos(temp)
+            caculaterDisplay.text = "\(sum7)"
+        }
+        if(q == 7)
+        {
+            var sum8 :Double = 0
+            sum8 = tan(temp)
+            caculaterDisplay.text = "\(sum8)"
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
