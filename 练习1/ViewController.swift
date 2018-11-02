@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     var temp: Double = 0
-    var q = 0
-    var w = 0
+    var q :Double = 0
+    var w :Double = 0
     var judge = 0
     
     @IBOutlet weak var caculaterDisplay: UITextField!
@@ -107,24 +107,31 @@ class ViewController: UIViewController {
         caculaterDisplay.text = ""
         q = 4
     }
-    
     @IBAction func sinn(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         q = 5
+
     }
     
     @IBAction func cosn(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         q = 6
+
     }
-    
     @IBAction func tann(_ sender: Any) {
         temp = Double(caculaterDisplay.text!)!
         caculaterDisplay.text = ""
         q = 7
+
     }
+    @IBAction func cimi(_ sender: Any) {
+        temp = Double(caculaterDisplay.text!)!
+        caculaterDisplay.text=""
+        q = 8
+    }
+    
     @IBAction func dengyu(_ sender: Any) {
         if (q == 1) {
             var sum :Double = 0
@@ -169,7 +176,6 @@ class ViewController: UIViewController {
                 caculaterDisplay.text = String(format: "%.0f", sum3)
             }
         }
-        judge = 0
         if(q == 5)
         {
             var sum6 :Double = 0
@@ -188,6 +194,18 @@ class ViewController: UIViewController {
             sum8 = tan(temp)
             caculaterDisplay.text = "\(sum8)"
         }
+        if(q == 8)
+        {
+            var sum9 :Double = 0
+            sum9 = pow(temp,Double(caculaterDisplay.text!)!)
+            caculaterDisplay.text = "\(sum9)"
+            if judge == 1{
+                caculaterDisplay.text =  String(format: "%f", sum9)
+            }else{
+                caculaterDisplay.text = String(format: "%.0f", sum9)
+            }
+        }
+        judge = 0
     }
     override func viewDidLoad() {
         super.viewDidLoad()
